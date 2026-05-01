@@ -1,17 +1,7 @@
-#include <iostream>
 #include <vector>
 
 #include "core/task.hpp"
-
-void print_task_summary(const Task& task)
-{
-    std::cout << task.name
-              << " period=" << task.period_ms
-              << " wcet=" << task.wcet_ms
-              << " deadline=" << task.relative_deadline_ms
-              << " priority=" << task.priority
-              << "\n";
-}
+#include "core/simulation_engine.hpp"
 
 int main()
 {
@@ -21,12 +11,9 @@ int main()
         Task(3, "TelemetryTask", 50, 8, 50, 1)
     };
 
-    std::cout << "Loaded tasks:\n";
+    SimulationEngine engine(tasks, 50);
 
-    for (const Task& task : tasks)
-    {
-        print_task_summary(task);
-    }
+    engine.run();
 
     return 0;
 }

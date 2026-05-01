@@ -11,6 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(rtos_bench
     src/main.cpp
+    src/core/simulation_engine.cpp
 )
 
 target_include_directories(rtos_bench
