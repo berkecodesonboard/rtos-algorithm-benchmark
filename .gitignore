@@ -1,0 +1,11 @@
+build/
+.vscode/
+
+outputs/*
+!outputs/.gitkeep
+
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.log
